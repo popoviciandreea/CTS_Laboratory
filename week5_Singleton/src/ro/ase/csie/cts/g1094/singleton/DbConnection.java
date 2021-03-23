@@ -20,7 +20,7 @@ public class DbConnection {
     	this.schema=schema;
     }
     
-    //Is not clean and misleading - others will think they have multiple connections
+    // lazy instantiation of the unique object
     public static DbConnection getConnection() {
     	if(DbConnection.connection == null) {
     		connection = new DbConnection();
@@ -29,5 +29,13 @@ public class DbConnection {
     	return DbConnection.connection;
     }
     
+    //Is not clean and misleading - others will think they have multiple connections
+    public static DbConnection getConnection(String connString, String schema) {
+    	if(DbConnection.connection == null) {
+    		connection = new DbConnection(connString,schema);
+    	}
+    	
+    	return DbConnection.connection;
     
+}
 }
