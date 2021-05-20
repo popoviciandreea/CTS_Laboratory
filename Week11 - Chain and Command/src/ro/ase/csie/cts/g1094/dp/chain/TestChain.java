@@ -13,10 +13,11 @@ public class TestChain {
 		
 		ChatHandler chatServer = languageFilter;
 		
-		chatServer.processMessage(new Message("@everyone","Kill Superman. It's a bot", 10));
-		chatServer.processMessage(new Message("@John","Let's start level 2", 10));
-		chatServer.processMessage(new Message("@everyone","Let's join the party", 10));
-
+		chatServer.processMessage(new Message("@everyone","Kill Superman. It's a bot",10));
+		chatServer.processMessage(new Message("@John", "Let's start level 2", 0));
+		chatServer.processMessage(new Message("@everyone", "Let's join the party", 0));
+		
+		
 	}
 
 }
